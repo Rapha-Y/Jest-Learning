@@ -42,4 +42,19 @@ test("There's no I in us", () => {
 test("Tomato should be in fruits", () => {
     fruits = ["Melon", "Apple", "Tomato"];
     expect(fruits).toContain("Tomato");
-})
+});
+
+//promise 
+/*test("User fetched name should be Leanne Graham", () => {
+    expect.assertions(1);
+    return functions.fetchUser().then(data => {
+        expect(data.name).toEqual("Leanne Graham");
+    });
+});*/
+
+//async await
+test("User fetched name should be Leanne Graham", async () => {
+    expect.assertions(1);
+    const data = await functions.fetchUser();
+    expect(data.name).toEqual("Leanne Graham");
+});
